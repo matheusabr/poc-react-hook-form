@@ -1,8 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-import "./Login.css";
-
 function LoginForm() {
   const loginForm = useForm({
     mode: "all",
@@ -11,6 +9,8 @@ function LoginForm() {
 
   function onSubmit(data, event) {
     console.log("data, event", data, event);
+    // Show alert with form data
+    alert(JSON.stringify(data));
   }
 
   return (

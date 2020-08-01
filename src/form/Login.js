@@ -5,7 +5,7 @@ import "./Login.css";
 
 function LoginForm() {
   const loginForm = useForm();
-  const { register, handleSubmit } = loginForm;
+  const { register, handleSubmit, errors } = loginForm;
 
   function onSubmit(data, event) {
     console.log("data, event", data, event);
@@ -18,12 +18,22 @@ function LoginForm() {
       <form className="form-content" onSubmit={handleSubmit(onSubmit)}>
         <div className="field">
           <label htmlFor="username">Username</label>
-          <input name="username" type="text" ref={register} />
+          <input
+            name="username"
+            type="text"
+            ref={register({ required: true })}
+          />
+          {errors.username && <span>This field is Required</span>}
         </div>
 
         <div className="field">
           <label htmlFor="password">Password</label>
-          <input name="password" type="text" ref={register} />
+          <input
+            name="password"
+            type="text"
+            ref={register({ required: true })}
+          />
+          {errors.password && <span>This field is Required</span>}
         </div>
 
         <button type="submit" className="btn-submit">

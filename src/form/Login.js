@@ -1,6 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
+import "./Login.css";
+
 function LoginForm(props) {
   const loginForm = useForm({
     mode: "all",
@@ -14,7 +16,7 @@ function LoginForm(props) {
   }
 
   return (
-    <div className="box">
+    <div className="box-login">
       <h1>Sign in</h1>
 
       <form className="form-content" onSubmit={handleSubmit(onSubmit)}>

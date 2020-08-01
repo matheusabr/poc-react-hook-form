@@ -1,15 +1,11 @@
 import React from "react";
 
+import AuthPage from "./pages/Auth/Auth";
+
 import "./App.css";
 
-import LoginForm from "./form/Login";
-
 function App() {
-  return (
-    <div className="login-form">
-      <LoginForm className="login-form" />
-    </div>
-  );
+  return <AuthPage />;
 }
 
 export default App;

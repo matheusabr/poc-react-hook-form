@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-function LoginForm() {
+function LoginForm(props) {
   const loginForm = useForm({
     mode: "all",
   });
@@ -56,7 +56,9 @@ function LoginForm() {
         </button>
       </form>
 
-      <span className="btn-signup">Sign Up</span>
+      <span className="btn-signup" onClick={props.changeAuthType}>
+        Sign Up
+      </span>
     </div>
   );
 }

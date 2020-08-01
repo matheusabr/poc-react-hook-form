@@ -28,13 +28,6 @@ input:focus {
     box-sizing: border-box;
 }
 
-.login-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
 .box {
     display: flex;
     flex-direction: column;

@@ -31,9 +31,18 @@ function LoginForm() {
           <input
             name="password"
             type="text"
-            ref={register({ required: true })}
+            ref={register({
+              required: true,
+              minLength: 6,
+              pattern: /^[0-9a-zA-Z]+$/,
+            })}
           />
-          {errors.password && <span>This field is Required</span>}
+          {errors.password && (
+            <span>
+              This field is Required and must be letters and numbers and at
+              least 6 characters
+            </span>
+          )}
         </div>
 
         <button type="submit" className="btn-submit">

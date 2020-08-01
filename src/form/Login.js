@@ -4,8 +4,10 @@ import { useForm } from "react-hook-form";
 import "./Login.css";
 
 function LoginForm() {
-  const loginForm = useForm();
-  const { register, handleSubmit, errors } = loginForm;
+  const loginForm = useForm({
+    mode: "all",
+  });
+  const { register, handleSubmit, errors, formState } = loginForm;
 
   function onSubmit(data, event) {
     console.log("data, event", data, event);
@@ -45,7 +47,11 @@ function LoginForm() {
           )}
         </div>
 
-        <button type="submit" className="btn-submit">
+        <button
+          type="submit"
+          className="btn-submit"
+          disabled={!formState.isValid}
+        >
           Let me in!
         </button>
       </form>
